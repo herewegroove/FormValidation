@@ -1,0 +1,33 @@
+<html ng-app="myApp">
+
+<head>
+  <title>AngularJS Routing</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
+  <script src="http://code.angularjs.org/1.2.7/angular.js"></script>
+  <script src="http://code.angularjs.org/1.2.7/angular-route.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="MainCtrl">
+
+  <form name="form">
+
+    Min:
+    <input name="min" type="number" ng-model="field.min" lower-than="{{field.max}}" />
+    <span class="error" ng-show="form.min.$error.lowerThan">
+        Min cannot exceed max.
+      </span>
+
+    <br />Max:
+    <input name="max" type="number" ng-model="field.max" />
+
+  </form>
+
+</body>
+
+</html>
